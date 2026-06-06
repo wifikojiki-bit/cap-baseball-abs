@@ -6,8 +6,12 @@ workflows:
       flutter: stable
     scripts:
       - name: Get packages
-        script: flutter pub get
+        script: |
+          cd cap_baseball_abs/cap_baseball_abs
+          flutter pub get
       - name: Build APK
-        script: flutter build apk --release --no-shrink
+        script: |
+          cd cap_baseball_abs/cap_baseball_abs
+          flutter build apk --release --no-shrink
     artifacts:
-      - build/app/outputs/flutter-apk/app-release.apk
+      - cap_baseball_abs/cap_baseball_abs/build/app/outputs/flutter-apk/app-release.apk
